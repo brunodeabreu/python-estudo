@@ -1,0 +1,129 @@
+# Working with Dates and Times in Python
+
+
+## Dates and Calendars
+
+* Python tem uma classe especial para trabalhar com datas `date` 
+
+* Com uma classe python especial para trabalhar com data temos a facilidade de :
+  - calcular quantidade de dias entre datas, 
+  - verificar a ordem, 
+  - qual o dia da semana, 
+  - etc.
+
+
+**Para criar um objeto do tipo data**
+
+```{python}
+# Import date
+from datetime import date
+
+#Create dates
+two_hurricanes_dates = [date(2016,10,7), date(2017,6,21)]    #date(year, month, day)
+```
+
+Para utilizara função `date` a ordem é importante `date(year, month, day)`
+
+Utilizando : 
+
+```{python}
+print(two_hurricanes_dates[0].year)
+print(two_hurricanes_dates[0].month)
+print(two_hurricanes_dates[0].day)
+
+print("\n")
+print(two_hurricanes_dates[0].weekday())
+
+
+```
+
+* Weekdays in Python
+ - 0 : Monday
+ - 1 : Tuesday
+ - 2 : Wednesday
+ - 3 : Thursday
+ - 4 : Friday
+ - 5 : Saturday
+ - 6 : Sunday
+
+
+
+---
+
+**Math with dates**
+
+Python idenficando a menor data
+
+```{python}
+# Import date
+from datetime import date
+
+# create dates
+d1 = date(2017,11,5)
+d2 = date(2017,12,4)
+l = [d1,d2]
+print(min(l))
+```
+
+Ao subtrair duas datas temos um objeto `timedelta`, podendo extrair o número de dias
+
+```{python}
+delta = d2 - d1
+print(type(delta))
+print(delta.days)
+```
+
+Utilizando `timedelta` python consegue identificar que novembro tem 30 dias.
+
+```{python}
+# import timedelta
+from datetime import timedelta
+
+# criando um timedelta de 29 dias
+td = timedelta(days=29)
+
+print(d1 + td)
+
+```
+
+---
+
+**Turning dates into strings**
+
+```{python}
+from datetime import date
+
+d = date(2017,11,5)
+
+# ISO format : YYYY-MM-DD
+print(f'ISO 8601 format (default) YYYY-MM-DD : {d}')
+
+# Put the date into list
+print([d.isoformat()])
+
+```
+
+
+Podemos trabalhar as datas em outros formatos com `strftime`
+
+```{python}
+d = date(2017,1,5)
+
+print(d.strftime("%Y"))
+
+
+print(d.strftime("Year is %Y"))
+
+
+print(d.strftime("%Y/%m/%d"))
+
+```
+
+
+
+
+## Combining Dates and Times
+
+## Time zones and Daylight Saving
+
+## Dates and Times in Pandas

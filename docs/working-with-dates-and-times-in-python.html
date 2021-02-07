@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Python Data Science Carrer Track - Notas de Estudo</title>
-  <meta name="description" content="Python Data Science Carrer Track - Notas de Estudo" />
+  <title>Notas # 18 Working with Dates and Times in Python | Python Data Science Carrer Track - Notas de Estudo</title>
+  <meta name="description" content="Notas # 18 Working with Dates and Times in Python | Python Data Science Carrer Track - Notas de Estudo" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Python Data Science Carrer Track - Notas de Estudo" />
+  <meta property="og:title" content="Notas # 18 Working with Dates and Times in Python | Python Data Science Carrer Track - Notas de Estudo" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Python Data Science Carrer Track - Notas de Estudo" />
+  <meta name="twitter:title" content="Notas # 18 Working with Dates and Times in Python | Python Data Science Carrer Track - Notas de Estudo" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro-ao-python.html"/>
+<link rel="prev" href="cleaning-data-in-python.html"/>
+<link rel="next" href="functions-in-python.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -190,24 +190,93 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Python Data Science Carrer Track - Notas de Estudo</h1>
-<p class="author"><em>Bruno de Abreu Machado</em></p>
-<p class="date"><em>2021-02-07</em></p>
+<div id="working-with-dates-and-times-in-python" class="section level1">
+<h1><span class="header-section-number">Notas # 18</span> Working with Dates and Times in Python</h1>
+<div id="dates-and-calendars" class="section level2">
+<h2><span class="header-section-number">18.1</span> Dates and Calendars</h2>
+<ul>
+<li><p>Python tem uma classe especial para trabalhar com datas <code>date</code></p></li>
+<li><p>Com uma classe python especial para trabalhar com data temos a facilidade de :</p>
+<ul>
+<li>calcular quantidade de dias entre datas,</li>
+<li>verificar a ordem,</li>
+<li>qual o dia da semana,</li>
+<li>etc.</li>
+</ul></li>
+</ul>
+<p><strong>Para criar um objeto do tipo data</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="working-with-dates-and-times-in-python.html#cb1-1"></a><span class="co"># Import date</span></span>
+<span id="cb1-2"><a href="working-with-dates-and-times-in-python.html#cb1-2"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
+<span id="cb1-3"><a href="working-with-dates-and-times-in-python.html#cb1-3"></a></span>
+<span id="cb1-4"><a href="working-with-dates-and-times-in-python.html#cb1-4"></a><span class="co">#Create dates</span></span>
+<span id="cb1-5"><a href="working-with-dates-and-times-in-python.html#cb1-5"></a>two_hurricanes_dates <span class="op">=</span> [date(<span class="dv">2016</span>,<span class="dv">10</span>,<span class="dv">7</span>), date(<span class="dv">2017</span>,<span class="dv">6</span>,<span class="dv">21</span>)]    <span class="co">#date(year, month, day)</span></span></code></pre></div>
+<p>Para utilizara função <code>date</code> a ordem é importante <code>date(year, month, day)</code></p>
+<p>Utilizando :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="working-with-dates-and-times-in-python.html#cb2-1"></a><span class="bu">print</span>(two_hurricanes_dates[<span class="dv">0</span>].year)</span></code></pre></div>
+<pre><code>## 2016</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="working-with-dates-and-times-in-python.html#cb4-1"></a><span class="bu">print</span>(two_hurricanes_dates[<span class="dv">0</span>].month)</span></code></pre></div>
+<pre><code>## 10</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="working-with-dates-and-times-in-python.html#cb6-1"></a><span class="bu">print</span>(two_hurricanes_dates[<span class="dv">0</span>].day)</span></code></pre></div>
+<pre><code>## 7</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="working-with-dates-and-times-in-python.html#cb8-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="working-with-dates-and-times-in-python.html#cb9-1"></a><span class="bu">print</span>(two_hurricanes_dates[<span class="dv">0</span>].weekday())</span></code></pre></div>
+<pre><code>## 4</code></pre>
+<ul>
+<li>Weekdays in Python</li>
+<li>0 : Monday</li>
+<li>1 : Tuesday</li>
+<li>2 : Wednesday</li>
+<li>3 : Thursday</li>
+<li>4 : Friday</li>
+<li>5 : Saturday</li>
+<li>6 : Sunday</li>
+</ul>
+<hr />
+<p><strong>Math with dates</strong></p>
+<p>Python idenficando a menor data</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="working-with-dates-and-times-in-python.html#cb11-1"></a><span class="co"># Import date</span></span>
+<span id="cb11-2"><a href="working-with-dates-and-times-in-python.html#cb11-2"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
+<span id="cb11-3"><a href="working-with-dates-and-times-in-python.html#cb11-3"></a></span>
+<span id="cb11-4"><a href="working-with-dates-and-times-in-python.html#cb11-4"></a><span class="co"># create dates</span></span>
+<span id="cb11-5"><a href="working-with-dates-and-times-in-python.html#cb11-5"></a>d1 <span class="op">=</span> date(<span class="dv">2017</span>,<span class="dv">11</span>,<span class="dv">5</span>)</span>
+<span id="cb11-6"><a href="working-with-dates-and-times-in-python.html#cb11-6"></a>d2 <span class="op">=</span> date(<span class="dv">2017</span>,<span class="dv">12</span>,<span class="dv">4</span>)</span>
+<span id="cb11-7"><a href="working-with-dates-and-times-in-python.html#cb11-7"></a>l <span class="op">=</span> [d1,d2]</span>
+<span id="cb11-8"><a href="working-with-dates-and-times-in-python.html#cb11-8"></a><span class="bu">print</span>(<span class="bu">min</span>(l))</span></code></pre></div>
+<pre><code>## 2017-11-05</code></pre>
+<p>Ao subtrair duas datas temos um objeto <code>timedelta</code>, podendo extrair o número de dias</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="working-with-dates-and-times-in-python.html#cb13-1"></a>delta <span class="op">=</span> d2 <span class="op">-</span> d1</span>
+<span id="cb13-2"><a href="working-with-dates-and-times-in-python.html#cb13-2"></a><span class="bu">print</span>(<span class="bu">type</span>(delta))</span></code></pre></div>
+<pre><code>## &lt;class &#39;datetime.timedelta&#39;&gt;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="working-with-dates-and-times-in-python.html#cb15-1"></a><span class="bu">print</span>(delta.days)</span></code></pre></div>
+<pre><code>## 29</code></pre>
+<p>Utilizando <code>timedelta</code> python consegue identificar que novembro tem 30 dias.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="working-with-dates-and-times-in-python.html#cb17-1"></a><span class="co"># import timedelta</span></span>
+<span id="cb17-2"><a href="working-with-dates-and-times-in-python.html#cb17-2"></a><span class="im">from</span> datetime <span class="im">import</span> timedelta</span>
+<span id="cb17-3"><a href="working-with-dates-and-times-in-python.html#cb17-3"></a></span>
+<span id="cb17-4"><a href="working-with-dates-and-times-in-python.html#cb17-4"></a><span class="co"># criando um timedelta de 29 dias</span></span>
+<span id="cb17-5"><a href="working-with-dates-and-times-in-python.html#cb17-5"></a>td <span class="op">=</span> timedelta(days<span class="op">=</span><span class="dv">29</span>)</span>
+<span id="cb17-6"><a href="working-with-dates-and-times-in-python.html#cb17-6"></a></span>
+<span id="cb17-7"><a href="working-with-dates-and-times-in-python.html#cb17-7"></a><span class="bu">print</span>(d1 <span class="op">+</span> td)</span></code></pre></div>
+<pre><code>## 2017-12-04</code></pre>
 </div>
-<div id="sobre" class="section level1">
-<h1><span class="header-section-number">Notas # 1</span> Sobre</h1>
-<p>Escrevo estas notas para salvar tópicos e exemplos para consulta futuras, além de ser uma forma de acompanhar e documentar o progresso</p>
-<p>Sigo o path de carrer da datacamp <a href="https://learn.datacamp.com/career-tracks/data-scientist-with-python?version=5">Data Scientist with Python</a> que é composto de 25 cursos e 6 projetos.</p>
+<div id="combining-dates-and-times" class="section level2">
+<h2><span class="header-section-number">18.2</span> Combining Dates and Times</h2>
+</div>
+<div id="time-zones-and-daylight-saving" class="section level2">
+<h2><span class="header-section-number">18.3</span> Time zones and Daylight Saving</h2>
+</div>
+<div id="dates-and-times-in-pandas" class="section level2">
+<h2><span class="header-section-number">18.4</span> Dates and Times in Pandas</h2>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="intro-ao-python.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cleaning-data-in-python.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions-in-python.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -238,7 +307,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/brunodeabreu/python-estudo/edit/master/index.Rmd",
+"link": "https://github.com/brunodeabreu/python-estudo/edit/master/18-Dates-and-Times.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -246,7 +315,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/brunodeabreu/python-estudo/blob/master/index.Rmd",
+"link": "https://github.com/brunodeabreu/python-estudo/blob/master/18-Dates-and-Times.Rmd",
 "text": null
 },
 "download": null,

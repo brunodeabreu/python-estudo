@@ -1,9 +1,13 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "Python Data Science Carrer Track - Notas de Estudo"
+author: "Bruno de Abreu Machado"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# Sobre
+
+Escrevo estas notas para salvar tópicos e exemplos para consulta futuras, além de ser uma forma de acompanhar e documentar o progresso
+
+Sigo o path de carrer da datacamp [Data Scientist with Python](https://learn.datacamp.com/career-tracks/data-scientist-with-python?version=5) que é composto de 25 cursos e 6 projetos.
 
